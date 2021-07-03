@@ -61,6 +61,7 @@ const RegisterUser = () => {
           modalStatus={true}
           callbackLeftBtn={() => setShowmodal(!showModal)}
           modalTitle="Succes....."
+          rightButtonTxt="Cerrar"
         >
           example...
         </CustomModal>

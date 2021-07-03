@@ -89,7 +89,7 @@ const CustomModal = ({
                     callbackRightBtn();
                   }}
                 >
-                  Press
+                  {rightButtonTxt}
                 </button>
               </FooterModal>
             </ContainerModal>
