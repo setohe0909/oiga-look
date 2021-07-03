@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 
 import RecursiveForm from '../recursive-form';
+import CustomModal from '../ui/modal';
+
 import SignupSchema from '../../schema/register';
 import { registerFields } from './form';
 
 import { FormContainer } from './styles';
 
 const RegisterUser = () => {
+  const [showModal, setShowmodal] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -37,16 +41,30 @@ const RegisterUser = () => {
             />
           ))}
           <p>
-            Al presionar "Registrarme" estas de acuedo con nuestros{' '}
+            Al presionar <strong>"Registrarme"</strong> estas de acuedo con
+            nuestros
             <a href="/" rel="noopener noreferrer" target="_blank">
-              terminos y condiciones de uso
+              terminos y condiciones de uso.
             </a>
           </p>
           <div>
-            <button type="submit">Registrarme</button>
+            <button type="button" onClick={() => setShowmodal(!showModal)}>
+              Registrarme
+            </button>
           </div>
         </FormContainer>
       </form>
+
+      {showModal && (
+        <CustomModal
+          dimension="small"
+          modalStatus={true}
+          callbackLeftBtn={() => setShowmodal(!showModal)}
+          modalTitle="Succes....."
+        >
+          example...
+        </CustomModal>
+      )}
     </>
   );
 };
