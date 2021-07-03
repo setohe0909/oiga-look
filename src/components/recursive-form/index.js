@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 import { FieldForm, InputTitle, CustomInput, ErrorSpan } from './styles';
 
-const RecursiveForm = ({ field, name, errorMessage, formik, type }) => (
+const RecursiveForm = ({ field, name, errorMessage, formik, type, icon }) => (
   <>
     <FieldForm>
+      {icon && <i class={`fas ${icon}`} />}
       <InputTitle minValue={14} maxValue={16} htmlFor={field}>
         {name}
       </InputTitle>
@@ -31,6 +32,7 @@ RecursiveForm.propTypes = {
   type: PropTypes.string.isRequired,
   errorMessage: PropTypes.string.isRequired,
   formik: PropTypes.oneOfType([PropTypes.shape, PropTypes.object]).isRequired,
+  icon: PropTypes.string,
 };
 
 export default RecursiveForm;

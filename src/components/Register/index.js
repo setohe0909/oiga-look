@@ -38,11 +38,12 @@ const RegisterUser = () => {
               type={item.type}
               errorMessage={item.errorMessage}
               formik={formik}
+              icon={item.icon}
             />
           ))}
           <p>
             Al presionar <strong>"Registrarme"</strong> estas de acuedo con
-            nuestros
+            nuestros{' '}
             <a href="/" rel="noopener noreferrer" target="_blank">
               terminos y condiciones de uso.
             </a>

@@ -4,6 +4,7 @@ export const registerFields = [
     name: 'Nombre',
     field: 'name',
     type: 'text',
+    icon: 'fa-user',
     errorMessage: 'El nombre es obligatorio',
   },
   {
@@ -11,6 +12,7 @@ export const registerFields = [
     name: 'Apellido',
     field: 'lastName',
     type: 'text',
+    icon: 'fa-user',
     errorMessage: 'El apellido es obligatorio',
   },
   {
@@ -18,12 +20,14 @@ export const registerFields = [
     name: 'Telefono',
     field: 'phone',
     type: 'number',
+    icon: 'fa-mobile-alt',
     errorMessage: 'El telefono es obligatorio',
   },
   {
     id: 4,
     name: 'Correo electronico',
     field: 'email',
+    icon: 'fa-envelope',
     errorMessage: 'El correo electronico es obligatorio',
   },
   {
@@ -31,6 +35,7 @@ export const registerFields = [
     name: 'Contraseña',
     field: 'password',
     type: 'password',
+    icon: 'fa-lock',
     errorMessage: 'La contraseña es obligatorio',
   },
   {
@@ -38,6 +43,7 @@ export const registerFields = [
     name: 'Direccion',
     field: 'address',
     type: 'text',
+    icon: 'fa-map-marker-alt',
     errorMessage: 'La direccion es obligatorio',
   },
 ];

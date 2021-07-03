@@ -20,8 +20,8 @@ export const ErrorSpan = styled.span`
 export const FieldForm = styled.div`
   margin-top: 25px;
   display: flex;
-  flex-direction: column;
-  height: 60px;
+  flex-direction: row;
+  gap: 10px;
 `;
 
 export const InputTitle = styled.label`
@@ -45,11 +45,7 @@ export const InputTitle = styled.label`
 `;
 
 export const CustomInput = styled.input`
-  border-radius: 16px !important;
-  border: 0 !important;
-  padding: 0 15px;
-  box-shadow: inset 3px 3px 6px 0 #d9d9d9,
-    inset -3px -3px 6px 0 rgba(255, 255, 255, 0.5) !important;
+  border-radius: 8px !important;
   background-color: white;
   height: 30px;
   outline: none;
