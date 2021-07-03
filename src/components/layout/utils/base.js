@@ -1,5 +1,5 @@
-import { css } from "@emotion/core";
-import { omit } from "lodash";
+import { css } from '@emotion/react';
+import { omit } from 'lodash';
 
 export const breakpoints = {
   xsm: 370,
@@ -28,8 +28,8 @@ export const getMatchMedias = () => {
 };
 
 export const mq = Object.keys(breakpoints).reduce((accumulator, label) => {
-  const prefix = typeof breakpoints[label] === "string" ? "" : "min-width:";
-  const suffix = typeof breakpoints[label] === "string" ? "" : "px";
+  const prefix = typeof breakpoints[label] === 'string' ? '' : 'min-width:';
+  const suffix = typeof breakpoints[label] === 'string' ? '' : 'px';
   accumulator[label] = (cls) => css`
     @media (${prefix + breakpoints[label] + suffix}) {
       ${cls};
@@ -44,12 +44,12 @@ export const mq = Object.keys(breakpoints).reduce((accumulator, label) => {
  * @returns {String} Emotion CSS block
  */
 export const makeResponsive = (responsiveBlock) => {
-  const reducedMq = omit(mq, "xsm");
+  const reducedMq = omit(mq, 'xsm');
   const deltas = responsiveBlock.map((item) => ({
     ...item,
     delta: (item.max - item.min) / 3,
     first: `
-      ${item.property}: ${item.min}${item.unit || ""};
+      ${item.property}: ${item.min}${item.unit || ''};
     `,
   }));
 
@@ -60,10 +60,10 @@ export const makeResponsive = (responsiveBlock) => {
           (group, delta) => `
             ${group}
             ${delta.property}: ${delta.min + delta.delta * (idx + 1)}${
-            delta.unit || ""
+            delta.unit || ''
           };
           `,
-          ""
+          ''
         )};
       `)};
     `,
@@ -71,7 +71,7 @@ export const makeResponsive = (responsiveBlock) => {
       (firsts, delta) => css`
         ${firsts} ${delta.first};
       `,
-      ""
+      ''
     )
   );
 };
