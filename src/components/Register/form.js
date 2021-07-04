@@ -17,18 +17,18 @@ export const registerFields = [
   },
   {
     id: 3,
-    name: 'Telefono',
+    name: 'Teléfono',
     field: 'phone',
     type: 'number',
     icon: 'fa-mobile-alt',
-    errorMessage: 'El telefono es obligatorio',
+    errorMessage: 'El teléfono es obligatorio',
   },
   {
     id: 4,
-    name: 'Correo electronico',
+    name: 'Correo electrónico',
     field: 'email',
     icon: 'fa-envelope',
-    errorMessage: 'El correo electronico es obligatorio',
+    errorMessage: 'El correo electrónico es obligatorio',
   },
   {
     id: 5,
@@ -40,10 +40,10 @@ export const registerFields = [
   },
   {
     id: 6,
-    name: 'Direccion',
+    name: 'Dirección',
     field: 'address',
     type: 'text',
     icon: 'fa-map-marker-alt',
-    errorMessage: 'La direccion es obligatorio',
+    errorMessage: 'La Dirección es obligatorio',
   },
 ];

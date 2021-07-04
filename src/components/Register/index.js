@@ -7,7 +7,7 @@ import CustomModal from '../ui/modal';
 import SignupSchema from '../../schema/register';
 import { registerFields } from './form';
 
-import { FormContainer } from './styles';
+import { FormContainer, Paragraph, Button } from './styles';
 
 const RegisterUser = () => {
   const [showModal, setShowmodal] = useState(false);
@@ -35,23 +35,28 @@ const RegisterUser = () => {
               key={item.id}
               name={item.name}
               field={item.field}
+              placeholder={item.placeholder}
               type={item.type}
               errorMessage={item.errorMessage}
               formik={formik}
               icon={item.icon}
             />
           ))}
-          <p>
+          <Paragraph>
             Al presionar <strong>"Registrarme"</strong> estas de acuedo con
-            nuestros{' '}
-            <a href="/" rel="noopener noreferrer" target="_blank">
+            nuestros
+            <a
+              href="https://www.termsandconditionsgenerator.com/live.php?token=YAvhKwBz7p0Soy0kFxt8ETlDVBCz8ICf"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               terminos y condiciones de uso.
             </a>
-          </p>
+          </Paragraph>
           <div>
-            <button type="button" onClick={() => setShowmodal(!showModal)}>
+            <Button type="button" onClick={() => setShowmodal(!showModal)}>
               Registrarme
-            </button>
+            </Button>
           </div>
         </FormContainer>
       </form>

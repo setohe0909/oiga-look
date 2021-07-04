@@ -1,6 +1,18 @@
 import styled from '@emotion/styled';
 
 import { makeResponsive } from '../layout/utils/base';
+import { Colors } from '../ui/Colors';
+
+export const Container = styled.div`
+  position: relative;
+`;
+
+export const Icon = styled.i`
+  color: ${Colors.persianGreen};
+  position: absolute;
+  top: 13px;
+  left: 11px;
+`;
 
 export const ErrorSpan = styled.span`
   margin-top: 3px;
@@ -17,37 +29,14 @@ export const ErrorSpan = styled.span`
     ])}
 `;
 
-export const FieldForm = styled.div`
-  margin-top: 25px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-`;
-
-export const InputTitle = styled.label`
-  border: none;
-  padding: 0;
-  text-align: left;
-  width: 100%;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-transform: capitalize;
-
-  ${(props) =>
-    makeResponsive([
-      {
-        property: 'font-size',
-        min: props.minValue,
-        max: props.maxValue,
-        unit: 'px',
-      },
-    ])}
-`;
-
 export const CustomInput = styled.input`
   border-radius: 8px !important;
   background-color: white;
-  height: 30px;
+  width: 290px;
+  padding: 10px;
+  padding-left: 30px;
+  height: 20px;
+  margin-bottom: 20px;
   outline: none;
 
   ${(props) =>

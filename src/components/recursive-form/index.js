@@ -1,19 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { FieldForm, InputTitle, CustomInput, ErrorSpan } from './styles';
+import { Container, Icon, CustomInput, ErrorSpan } from './styles';
 
 const RecursiveForm = ({ field, name, errorMessage, formik, type, icon }) => (
-  <>
-    <FieldForm>
-      {icon && <i class={`fas ${icon}`} />}
-      <InputTitle minValue={14} maxValue={16} htmlFor={field}>
-        {name}
-      </InputTitle>
-    </FieldForm>
+  <Container>
+    {icon && <Icon className={`fas ${icon}`} />}
     <CustomInput
       minValue={14}
       maxValue={16}
+      placeholder={name}
       data-cy={field}
       type={type}
       name={field}
@@ -23,7 +19,7 @@ const RecursiveForm = ({ field, name, errorMessage, formik, type, icon }) => (
         {errorMessage}
       </ErrorSpan>
     )}
-  </>
+  </Container>
 );
 
 RecursiveForm.propTypes = {
