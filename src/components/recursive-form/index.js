@@ -12,11 +12,13 @@ const RecursiveForm = ({ field, name, errorMessage, formik, type, icon }) => (
       placeholder={name}
       data-cy={field}
       type={type}
+      onChange={formik.handleChange}
+      value={formik.values[field] || ''}
       name={field}
     />
     {!formik.values[field] && formik.touched && formik.touched[field] && (
       <ErrorSpan min={12} max={12}>
-        {errorMessage}
+        {errorMessage}.
       </ErrorSpan>
     )}
   </Container>

@@ -10,21 +10,24 @@ export const FormContainer = styled.div`
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  margin: 20px auto;
-  border: 1px solid red;
-  border-radius: 8px;
+  margin: 0 auto;
   padding: 20px;
+  height: 96vh;
+  background: ${Colors.white};
+
+  ${mq.md(css`
+    width: 60%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px auto;
+  `)};
 `;
 
 export const Paragraph = styled.p`
   color: ${Colors.mirage};
   width: 100%;
+  width: 320px;
   margin-bottom: 30px;
-
-  ${mq.md(css`
-    width: 320px;
-  `)}
 
   a {
     color: ${Colors.persianGreen};

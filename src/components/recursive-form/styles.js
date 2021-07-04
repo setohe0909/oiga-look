@@ -5,6 +5,10 @@ import { Colors } from '../ui/Colors';
 
 export const Container = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 export const Icon = styled.i`
@@ -15,8 +19,10 @@ export const Icon = styled.i`
 `;
 
 export const ErrorSpan = styled.span`
-  margin-top: 3px;
-  margin-bottom: 0px;
+  margin-top: -17px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  color: ${Colors.watermelon};
 
   ${(props) =>
     makeResponsive([

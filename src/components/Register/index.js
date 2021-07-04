@@ -15,13 +15,15 @@ const RegisterUser = () => {
   const formik = useFormik({
     initialValues: {
       name: '',
-      database: '',
-      query: '',
-      collection: '',
+      lastName: '',
+      phone: '',
+      email: '',
+      password: '',
+      address: '',
     },
     enableReinitialize: true,
     onSubmit: async (values) => {
-      // code...
+      console.log('🚀 ~ file: index.js ~ line 26 ~ onSubmit: ~ values', values);
     },
     validationSchema: SignupSchema,
   });
@@ -44,7 +46,7 @@ const RegisterUser = () => {
           ))}
           <Paragraph>
             Al presionar <strong>"Registrarme"</strong> estas de acuedo con
-            nuestros
+            nuestros{' '}
             <a
               href="https://www.termsandconditionsgenerator.com/live.php?token=YAvhKwBz7p0Soy0kFxt8ETlDVBCz8ICf"
               rel="noopener noreferrer"
@@ -54,9 +56,7 @@ const RegisterUser = () => {
             </a>
           </Paragraph>
           <div>
-            <Button type="button" onClick={() => setShowmodal(!showModal)}>
-              Registrarme
-            </Button>
+            <Button type="submit">Registrarme</Button>
           </div>
         </FormContainer>
       </form>
