@@ -5,4 +5,5 @@ export const Colors = {
   watermelon: '#f25c63',
   persianGreen: '#009C9B',
   mosque: '#046766',
+  alto: '#DEDDDD',
 };

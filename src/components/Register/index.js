@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 
 import RecursiveForm from '../recursive-form';
-import CustomModal from '../ui/modal';
 
 import SignupSchema from '../../schema/register';
 import { registerFields } from './form';
@@ -10,8 +9,6 @@ import { registerFields } from './form';
 import { FormContainer, Paragraph, Button } from './styles';
 
 const RegisterUser = () => {
-  const [showModal, setShowmodal] = useState(false);
-
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -60,18 +57,6 @@ const RegisterUser = () => {
           </div>
         </FormContainer>
       </form>
-
-      {showModal && (
-        <CustomModal
-          dimension="small"
-          modalStatus={true}
-          callbackLeftBtn={() => setShowmodal(!showModal)}
-          modalTitle="Succes....."
-          rightButtonTxt="Cerrar"
-        >
-          example...
-        </CustomModal>
-      )}
     </>
   );
 };

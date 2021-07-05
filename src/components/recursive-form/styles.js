@@ -21,7 +21,7 @@ export const Icon = styled.i`
 export const ErrorSpan = styled.span`
   margin-top: -17px;
   margin-bottom: 20px;
-  margin-left: 5px;
+  margin-left: 15px;
   color: ${Colors.watermelon};
 
   ${(props) =>
@@ -36,14 +36,16 @@ export const ErrorSpan = styled.span`
 `;
 
 export const CustomInput = styled.input`
-  border-radius: 8px !important;
+  border-radius: 4px !important;
+  box-shadow: 3px 12px 10px -11px rgb(0 0 0 / 52%);
   background-color: white;
-  width: 290px;
+  width: 280px;
   padding: 10px;
-  padding-left: 30px;
+  padding-left: 40px;
   height: 20px;
   margin-bottom: 20px;
   outline: none;
+  border: none;
 
   ${(props) =>
     makeResponsive([
@@ -54,7 +56,4 @@ export const CustomInput = styled.input`
         unit: 'px',
       },
     ])}
-
-  &:placeholder {
-  }
 `;
