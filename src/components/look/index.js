@@ -16,6 +16,11 @@ const LookUser = ({ context }) => {
     }
   }, [context]);
 
+  const showValues = (item) => {
+    console.log('🚀 ~ file: index.js ~ line 20 ~ showValues ~ item', item);
+    setShowmodal(!showModal);
+  };
+
   return (
     <>
       <LookContainer>
@@ -27,7 +32,7 @@ const LookUser = ({ context }) => {
             <Options
               role="button"
               key={item.id}
-              onClick={() => setShowmodal(!showModal)}
+              onClick={() => showValues(item)}
               image={item.img}
             />
           ))}
@@ -38,9 +43,8 @@ const LookUser = ({ context }) => {
         <CustomModal
           dimension="small"
           modalStatus={true}
-          callbackLeftBtn={() => setShowmodal(!showModal)}
-          modalTitle="Succes....."
-          rightButtonTxt="Cerrar"
+          callbackBtn={() => setShowmodal(!showModal)}
+          modalTitle="Tu selección fue:"
         >
           example...
         </CustomModal>

@@ -66,7 +66,7 @@ const CustomModal = ({
                   data-cy="close-modal"
                   onClick={() => {
                     setIsOpen(false);
-                    callbackLeftBtn();
+                    callbackBtn();
                   }}
                 >
                   <i className="close-action fas fa-times" />
@@ -89,8 +89,7 @@ CustomModal.propTypes = {
   modalStatus: PropTypes.bool,
   closeTimeoutMS: PropTypes.number,
   modalTitle: PropTypes.string,
-  callbackRightBtn: PropTypes.func,
-  callbackLeftBtn: PropTypes.func,
+  callbackBtn: PropTypes.func,
   dimension: PropTypes.string,
 };
 
@@ -98,7 +97,7 @@ CustomModal.defaultProps = {
   modalStatus: false,
   closeTimeoutMS: 500,
   modalTitle: '',
-  callbackRightBtn: () => {},
+  callbackBtn: () => {},
   dimension: 'small',
 };
 
