@@ -58,12 +58,21 @@ export const Options = styled.div`
   &:hover {
     background-color: rgb(0 156 155 / 22%);
 
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: #009c9b7d;
+      width: 100%;
+      height: 100%;
+    }
+
     &::after {
       position: absolute;
       content: '';
       background-color: ${Colors.persianGreen};
       width: 40px;
       height: 40px;
+      border: 10px solid rgb(70 195 195 / 50%);
       border-radius: 50%;
     }
   }

@@ -8,7 +8,6 @@ import {
   ContainerModal,
   HeaderModal,
   CloseButton,
-  FooterModal,
   BodyModal,
   ModalTitle,
 } from './styles';
@@ -24,10 +23,6 @@ const CustomModal = ({
   closeTimeoutMS,
   modalTitle,
   children,
-  rightButtonTxt,
-  rightButtonIcon,
-  righButtonBackgroundColor,
-  callbackRightBtn,
   callbackLeftBtn,
   dimension,
 }) => {
@@ -82,16 +77,6 @@ const CustomModal = ({
               >
                 {children}
               </BodyModal>
-              <FooterModal>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    callbackRightBtn();
-                  }}
-                >
-                  {rightButtonTxt}
-                </button>
-              </FooterModal>
             </ContainerModal>
           </Modal>
         )}
@@ -104,9 +89,6 @@ CustomModal.propTypes = {
   modalStatus: PropTypes.bool,
   closeTimeoutMS: PropTypes.number,
   modalTitle: PropTypes.string,
-  rightButtonTxt: PropTypes.string,
-  rightButtonIcon: PropTypes.string,
-  righButtonBackgroundColor: PropTypes.string,
   callbackRightBtn: PropTypes.func,
   callbackLeftBtn: PropTypes.func,
   dimension: PropTypes.string,
@@ -116,9 +98,6 @@ CustomModal.defaultProps = {
   modalStatus: false,
   closeTimeoutMS: 500,
   modalTitle: '',
-  rightButtonTxt: 'Save',
-  rightButtonIcon: '',
-  righButtonBackgroundColor: 'green',
   callbackRightBtn: () => {},
   dimension: 'small',
 };

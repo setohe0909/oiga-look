@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import CustomModal from '../ui/modal';
+
+import withContext from '../../HOC/withContext';
 
 import { lookData } from './look';
 import { LookContainer, NavBar, LookOptions, Options } from './styles';
 
-const LookUser = () => {
+const LookUser = ({ context }) => {
   const [showModal, setShowmodal] = useState(false);
+
+  useEffect(() => {
+    if (context) {
+      console.log('test', context.usersContent.user);
+    }
+  }, [context]);
 
   return (
     <>
@@ -41,4 +49,4 @@ const LookUser = () => {
   );
 };
 
-export default LookUser;
+export default withContext(LookUser);

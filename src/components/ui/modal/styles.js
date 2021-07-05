@@ -37,21 +37,6 @@ export const CloseButton = styled.button`
   }
 `;
 
-export const FooterModal = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  border-top: 1px solid #c0c0c0;
-
-  & button {
-    margin-top: 15px;
-
-    &:first-of-type {
-      margin-right: 10px;
-    }
-  }
-`;
-
 export const BodyModal = styled.div`
   display: flex;
   flex-direction: column;

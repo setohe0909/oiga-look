@@ -1,16 +1,19 @@
 import update from 'immutability-helper';
 
-const users = (context) => ({
-  on: false,
+const usersContent = (context) => ({
+  values: {},
   setAnyValue: (states, callback) => {
-    context.setState({
-      users: update(context.state.darkMode, states),
-    }, () => {
-      if (callback) {
-        callback()
+    context.setState(
+      {
+        usersContent: update(context.state.usersContent, states),
+      },
+      () => {
+        if (callback) {
+          callback();
+        }
       }
-    })
+    );
   },
-})
+});
 
-export default users
+export default usersContent;
