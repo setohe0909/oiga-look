@@ -1,23 +1,41 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import CustomModal from '../ui/modal';
-
+import Card from '../ui/card';
 import withContext from '../../HOC/withContext';
 
 import { lookData } from './look';
-import { LookContainer, NavBar, LookOptions, Options } from './styles';
+import {
+  LookContainer,
+  NavBar,
+  LookOptions,
+  Options,
+  ButtonsContainer,
+  Button,
+} from './styles';
 
 const LookUser = ({ context }) => {
+  let history = useHistory();
+
   const [showModal, setShowmodal] = useState(false);
+  const [userData, setUserData] = useState({});
 
   useEffect(() => {
     if (context?.users) {
-      console.log('test', context.users.values);
+      setUserData(context.users.values);
     }
   }, [context]);
 
   const showValues = (item) => {
-    console.log('🚀 ~ file: index.js ~ line 20 ~ showValues ~ item', item);
+    const { users } = context;
+    const updateData = { ...users.values, image: item.img };
+
+    users.setAnyValue({
+      values: { $set: updateData },
+    });
+
+    setUserData(updateData);
     setShowmodal(!showModal);
   };
 
@@ -37,6 +55,9 @@ const LookUser = ({ context }) => {
             />
           ))}
         </LookOptions>
+        <ButtonsContainer>
+          <Button onClick={() => history.push('/')}>Regresar</Button>
+        </ButtonsContainer>
       </LookContainer>
 
       {showModal && (
@@ -46,7 +67,7 @@ const LookUser = ({ context }) => {
           callbackBtn={() => setShowmodal(!showModal)}
           modalTitle="Tu selección fue:"
         >
-          example...
+          <Card data={userData} />
         </CustomModal>
       )}
     </>

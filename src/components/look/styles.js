@@ -26,7 +26,11 @@ export const LookContainer = styled.div`
 export const NavBar = styled.div`
   background: ${Colors.alto};
   padding: 10px 0 10px 0;
-  width: 600px;
+  width: 300px;
+
+  ${mq.md(css`
+    width: 600px;
+  `)};
 
   strong {
     color: ${Colors.persianGreen};
@@ -40,7 +44,11 @@ export const LookOptions = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 600px;
+  width: 300px;
+
+  ${mq.md(css`
+    width: 600px;
+  `)};
 `;
 
 export const Options = styled.div`
@@ -50,10 +58,18 @@ export const Options = styled.div`
   align-items: center;
   background-image: url(${({ image }) => image});
   cursor: pointer;
-  width: 200px;
-  height: 283px;
+  width: 100px;
+  min-height: 183px;
   position: relative;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  ${mq.md(css`
+    width: 200px;
+    height: 283px;
+    background-size: cover;
+  `)};
 
   &:hover {
     background-color: rgb(0 156 155 / 22%);
@@ -70,10 +86,34 @@ export const Options = styled.div`
       position: absolute;
       content: '';
       background-color: ${Colors.persianGreen};
-      width: 40px;
-      height: 40px;
-      border: 10px solid rgb(70 195 195 / 50%);
+      width: 30px;
+      height: 30px;
+      border: 8px solid rgb(70 195 195 / 50%);
+
       border-radius: 50%;
+
+      ${mq.md(css`
+        width: 40px;
+        height: 40px;
+        border: 10px solid rgb(70 195 195 / 50%); ;
+      `)};
     }
   }
+`;
+
+export const ButtonsContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+`;
+
+export const Button = styled.button`
+  background: ${Colors.alto};
+  border: 0;
+  padding: 10px;
+  border-radius: 8px;
+  color: ${Colors.persianGreen};
+  cursor: pointer;
 `;
