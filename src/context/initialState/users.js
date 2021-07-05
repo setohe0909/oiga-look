@@ -1,11 +1,11 @@
 import update from 'immutability-helper';
 
-const usersContent = (context) => ({
+const users = (context) => ({
   values: {},
   setAnyValue: (states, callback) => {
     context.setState(
       {
-        usersContent: update(context.state.usersContent, states),
+        users: update(context.state.users, states),
       },
       () => {
         if (callback) {
@@ -16,4 +16,4 @@ const usersContent = (context) => ({
   },
 });
 
-export default usersContent;
+export default users;

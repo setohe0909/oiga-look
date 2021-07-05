@@ -23,7 +23,7 @@ const CustomModal = ({
   closeTimeoutMS,
   modalTitle,
   children,
-  callbackLeftBtn,
+  callbackBtn,
   dimension,
 }) => {
   const [modalIsOpen, setIsOpen] = useState(modalStatus);
@@ -37,7 +37,7 @@ const CustomModal = ({
             isOpen={modalIsOpen}
             onRequestClose={() => {
               setIsOpen(false);
-              callbackLeftBtn();
+              callbackBtn();
             }}
             overlayClassName={{
               base: 'overlay-base',

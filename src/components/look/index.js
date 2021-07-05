@@ -11,8 +11,8 @@ const LookUser = ({ context }) => {
   const [showModal, setShowmodal] = useState(false);
 
   useEffect(() => {
-    if (context) {
-      console.log('test', context.usersContent.user);
+    if (context?.users) {
+      console.log('test', context.users.values);
     }
   }, [context]);
 

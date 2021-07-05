@@ -3,15 +3,13 @@ import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 
 import RecursiveForm from '../recursive-form';
-
 import SignupSchema from '../../schema/register';
 import { registerFields } from './form';
-
 import withContext from '../../HOC/withContext';
 
 import { FormContainer, Paragraph, Button } from './styles';
 
-const RegisterUser = ({ context }) => {
+const RegisterUser = withContext(({ context }) => {
   let history = useHistory();
 
   const formik = useFormik({
@@ -25,8 +23,8 @@ const RegisterUser = ({ context }) => {
     },
     enableReinitialize: true,
     validationSchema: SignupSchema,
-    onSubmit: async (values) => {
-      context.usersContent.setAnyValue({
+    onSubmit: (values) => {
+      context.users.setAnyValue({
         values: { $set: values },
       });
       history.push('/look');
@@ -67,6 +65,6 @@ const RegisterUser = ({ context }) => {
       </form>
     </>
   );
-};
+});
 
-export default withContext(RegisterUser);
+export default RegisterUser;

@@ -1,7 +1,7 @@
-import usersContent from './initialState/users';
+import users from './initialState/users';
 
 const state = (context, window) => ({
-  usersContent: usersContent(context, window),
+  users: users(context, window),
 });
 
 export default state;
